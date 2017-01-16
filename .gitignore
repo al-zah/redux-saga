@@ -27,11 +27,14 @@ build/Release
 node_modules
 
 # compiled js files
-lib
+# lib (to make possible npm dependency via github link)
 es
 
 # compiled umd js files
-# dist (keep this for vanilla examples)
+dist
 
 # docs generated files
 _book
+
+# Ide files
+.idea
