@@ -1331,6 +1331,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        log('error', 'uncaught', result.sagaStack || result.stack);
 	        if (result instanceof Error && onError) {
 	          onError(result, getState);
+	          result.state = getState();
+	          throw new Error(result);
 	        }
 	      }
 	      iterator._error = result;

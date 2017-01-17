@@ -285,7 +285,9 @@ export default function proc(
       if(!task.cont) {
         log('error', `uncaught`, result.sagaStack || result.stack)
         if((result instanceof Error) && onError) {
-          onError(result, getState)
+          onError(result, getState);
+          result.state = getState();
+          throw new Error(result);
         }
       }
       iterator._error = result
